@@ -1,0 +1,8 @@
+# CTL Morocco Security Policy
+# Contact: admin@ctlrhadd.com
+# Canonical: https://www.ctlsolution.org/.well-known/security.txt
+
+Contact: mailto:admin@ctlrhadd.com
+Expires: 2027-01-01T00:00:00.000Z
+Preferred-Languages: en, fr, ar
+Canonical: https://www.ctlsolution.org/.well-known/security.txt

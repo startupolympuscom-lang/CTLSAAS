@@ -1,0 +1,277 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Adjust this value based on your fixed header's height */
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.85rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out;
+}
+
+/* Hero mascot floating animation */
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}
+.animate-hero-float {
+  animation: hero-float 5s ease-in-out infinite;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #1f2937, #2dd4bf, #1f2937);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Background texture utility */
+.bg-background-texture {
+  background-image: radial-gradient(circle at 50% 50%, rgba(245, 230, 211, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+/* Global transitions for smooth microinteractions */
+* {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Button-specific styles to ensure consistency */
+@layer components {
+  .btn-hero-primary {
+    @apply bg-gray-800 text-white hover:bg-gray-900 active:bg-gray-700 shadow-lg font-bold border-0 rounded-lg transition-all duration-200 px-8 py-4 text-lg;
+  }
+
+  .btn-hero-secondary {
+    @apply bg-transparent text-gray-800 hover:bg-gray-800 hover:text-white active:bg-gray-700 active:text-white border-2 border-gray-800 shadow-md font-bold rounded-lg transition-all duration-200 px-8 py-4 text-lg;
+  }
+
+  .btn-nav-contact {
+    @apply bg-gray-800 text-white hover:bg-gray-900 active:bg-gray-700 shadow-lg font-bold border-0 rounded-lg transition-all duration-200;
+  }
+
+  .btn-cta-primary {
+    @apply bg-yellow-400 text-gray-800 hover:bg-yellow-500 active:bg-yellow-300 shadow-lg font-bold border-0 rounded-lg transition-all duration-200;
+  }
+
+  .btn-cta-secondary {
+    @apply bg-white text-gray-800 hover:bg-gray-50 active:bg-gray-100 border-2 border-gray-300 shadow-md font-bold rounded-lg transition-all duration-200;
+  }
+
+  /* Hero button overrides for distinct styling and glow */
+  .hero-button-primary {
+    background-color: #1f2937 !important; /* Dark charcoal */
+    color: white !important;
+    border: none !important;
+    font-weight: 700 !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 0 20px rgba(250, 204, 21, 0.5), 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important; /* Yellowish glow + standard shadow */
+    transition: all 0.2s ease-in-out !important;
+    padding: 2rem 4rem !important;
+    font-size: 1.25rem !important;
+    line-height: 1.75rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+  }
+
+  .hero-button-primary:hover {
+    background-color: #111827 !important; /* Darker on hover */
+    transform: scale(1.05) !important;
+    box-shadow: 0 0 30px rgba(250, 204, 21, 0.7), 0 6px 10px -2px rgba(0, 0, 0, 0.2) !important; /* Enhanced yellowish glow */
+  }
+
+  .hero-button-secondary {
+    background-color: #fffbeb !important; /* Light yellow/sand */
+    color: #1f2937 !important; /* Dark charcoal text */
+    border: 2px solid #1f2937 !important; /* Dark charcoal border */
+    font-weight: 700 !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 0 20px rgba(250, 204, 21, 0.5), 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important; /* Yellowish glow + standard shadow */
+    transition: all 0.2s ease-in-out !important;
+    padding: 2rem 4rem !important;
+    font-size: 1.25rem !important;
+    line-height: 1.75rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+  }
+
+  .hero-button-secondary:hover {
+    background-color: #1f2937 !important; /* Dark charcoal on hover */
+    color: white !important; /* White text on hover */
+    transform: scale(1.05) !important;
+    box-shadow: 0 0 30px rgba(250, 204, 21, 0.7), 0 6px 10px -2px rgba(0, 0, 0, 0.2) !important; /* Enhanced yellowish glow */
+  }
+
+  /* Ensure consistent font rendering */
+  .hero-button-primary,
+  .hero-button-secondary {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+  }
+
+  /* Fix for webkit browsers */
+  @supports (-webkit-appearance: none) {
+    .hero-button-primary,
+    .hero-button-secondary {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  }
+}
+
+/* WCAG Accessibility Enhancements */
+@layer utilities {
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .primary-solid {
+      @apply bg-black text-white border-black;
+    }
+    .secondary-outline {
+      @apply bg-white text-black border-black;
+    }
+    .secondary-outline:hover {
+      @apply bg-black text-white;
+    }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+
+  /* Focus visible enhancements for keyboard navigation */
+  .focus-visible-enhanced:focus-visible {
+    outline: 3px solid #1f2937;
+    outline-offset: 2px;
+  }
+}
+
+/* Ensure all color classes are preserved during purge */
+.bg-moroccan-yellow {
+  @apply bg-yellow-400;
+}
+.bg-moroccan-charcoal {
+  @apply bg-gray-800;
+}
+.bg-moroccan-teal {
+  @apply bg-teal-400;
+}
+.bg-moroccan-sand {
+  @apply bg-amber-50;
+}
+.text-moroccan-yellow {
+  @apply text-yellow-400;
+}
+.text-moroccan-charcoal {
+  @apply text-gray-800;
+}
+.text-moroccan-teal {
+  @apply text-teal-400;
+}
+.text-moroccan-sand {
+  @apply text-amber-50;
+}
+.border-moroccan-yellow {
+  @apply border-yellow-400;
+}
+.border-moroccan-charcoal {
+  @apply border-gray-800;
+}
+.border-moroccan-teal {
+  @apply border-teal-400;
+}
+.border-moroccan-sand {
+  @apply border-amber-50;
+}
+.hover\:bg-moroccan-yellow:hover {
+  @apply bg-yellow-500;
+}
+.hover\:bg-moroccan-charcoal:hover {
+  @apply bg-gray-900;
+}
+.hover\:text-moroccan-charcoal:hover {
+  @apply text-gray-800;
+}
+.hover\:text-white:hover {
+  @apply text-white;
+}

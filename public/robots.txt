@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+Allow: /blog
+Allow: /about
+Allow: /product
+Allow: /corp-digital-transformation
+Allow: /csr
+Allow: /contact
+Disallow: /blog/editor
+Disallow: /.next/
+Disallow: /api/private/
+Disallow: /admin/
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+
+# Bing specific
+User-agent: Bingbot
+Allow: /
+
+# Sitemap location
+Sitemap: https://ctlsolution.org/sitemap.xml
+
+# Crawl delay to be respectful to server
+Crawl-delay: 1

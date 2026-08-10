@@ -1,0 +1,7 @@
+.next
+node_modules
+.env.local
+.vercel
+pnpm-lock.yaml
+bun.lockb
+*.lock
