@@ -16,8 +16,10 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
     return <main className="min-h-screen">{children}</main>
   }
 
+  const isHome = pathname === "/"
+
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className={`min-h-screen flex flex-col ${isHome ? "bg-moroccan-yellow" : ""}`}>
       <Navigation />
       <main id="top" className="flex-1">
         {children}

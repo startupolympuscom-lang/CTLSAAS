@@ -12,14 +12,14 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative bg-moroccan-yellow text-moroccan-charcoal min-h-screen flex items-center overflow-hidden"
+      className="relative bg-moroccan-yellow text-moroccan-charcoal flex items-center overflow-hidden"
     >
       <div className="absolute inset-0 bg-[url('/placeholder.svg?height=800&width=1200')] opacity-5"></div>
 
       {/* Soft decorative glow behind the mascot */}
       <div className="pointer-events-none absolute right-0 top-1/2 hidden h-[36rem] w-[36rem] -translate-y-1/2 translate-x-1/4 rounded-full bg-white/30 blur-3xl lg:block" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-24 lg:py-0">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16 md:py-20 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-8">
           {/* Copy */}
           <div className="text-center lg:text-left space-y-8">
