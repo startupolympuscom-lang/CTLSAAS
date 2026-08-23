@@ -58,6 +58,19 @@ export interface Translations {
     heroSubtitle: string
     heroDescription: string
     heroSlogan: string // Added heroSlogan
+    heroEyebrow: string
+    heroTitlePrefix: string
+    heroTitleHighlight: string
+    heroPrimaryCta: string
+    heroSecondaryCta: string
+    heroCard1Title: string
+    heroCard1Description: string
+    heroCard2Title: string
+    heroCard2Description: string
+    heroCard3Title: string
+    heroCard3Description: string
+    heroCard4Title: string
+    heroCard4Description: string
     aiPoweredTitle: string
     aiPoweredDescription: string
     workflowTitle: string
@@ -71,6 +84,7 @@ export interface Translations {
     poweredByTitle: string
     ourCoreProducts: string
     trustedByTitle: string
+    founderWordTitle: string
     founderQuote: string
     founderName: string
     founderTitle: string
@@ -305,10 +319,6 @@ export interface Translations {
     objective2Description: string
     objective3Title: string
     objective3Description: string
-    impactMetricsTitle: string
-    jobsCreated: string
-    gdpContribution: string
-    egdiRanking: string
     learnAboutOurAlignment: string
   }
 
@@ -375,7 +385,7 @@ export const translations: Record<Language, Translations> = {
       getDemo: "Obtenir une démo",
       contact: "Contact",
       phone: "Téléphone",
-      email: "admin@ctlrhadd.com",
+      email: "E-mail",
       location: "Localisation",
       readMore: "Lire plus",
       readLess: "Lire moins",
@@ -415,6 +425,19 @@ export const translations: Record<Language, Translations> = {
       heroDescription:
         "CTL développe des solutions basées sur l'IA qui font gagner du temps, augmentent les ventes et vous gardent en avance.",
       heroSlogan: "Travaillez moins. Accomplissez plus.", // French translation for heroSlogan
+      heroEyebrow: "INTELLIGENCE THAT TRANSFORMS BUSINESSES",
+      heroTitlePrefix: "L'intelligence artificielle au service de",
+      heroTitleHighlight: "votre performance.",
+      heroPrimaryCta: "Découvrir nos solutions",
+      heroSecondaryCta: "Voir nos cas d'usage",
+      heroCard1Title: "IA sur mesure",
+      heroCard1Description: "Des solutions adaptées à vos enjeux métier.",
+      heroCard2Title: "Automatisation intelligente",
+      heroCard2Description: "Optimisez vos processus et gagnez en efficacité.",
+      heroCard3Title: "Performance mesurable",
+      heroCard3Description: "Des résultats concrets, suivis et quantifiés.",
+      heroCard4Title: "Impact concret",
+      heroCard4Description: "Créez plus de valeur et gardez une longueur d'avance.",
       aiPoweredTitle: "Engagement Client Alimenté par l'IA",
       aiPoweredDescription:
         "Transformez votre interaction avec votre audience. Nos agents conversationnels compatibles Darija offrent des expériences authentiques et localisées tout en s'intégrant parfaitement à vos systèmes existants pour améliorer la rétention et la conversion.",
@@ -433,6 +456,7 @@ export const translations: Record<Language, Translations> = {
       poweredByTitle: "Alimenté par des Outils IA de Premier Plan",
       ourCoreProducts: "Nos Produits Principaux",
       trustedByTitle: "Approuvé par les Leaders Marocains",
+      founderWordTitle: "Le Mot du Fondateur",
       founderQuote:
         "La transformation numérique ne concerne pas seulement la technologie — elle vise à libérer le potentiel humain. Chez CTL, nous construisons des solutions réelles, utiles et accessibles. Contribuer à Maroc Digital 2030 est notre façon d'aider à façonner un Maroc plus moderne, connecté et centré sur l'humain.",
       founderName: "Mohamed Hamza Benthami",
@@ -777,10 +801,6 @@ export const translations: Record<Language, Translations> = {
       objective3Title: "Économie Numérique Dynamique",
       objective3Description:
         "Stimuler la création d'emplois et l'innovation dans les secteurs technologiques émergents.",
-      impactMetricsTitle: "Objectifs Nationaux 2030",
-      jobsCreated: "Emplois directs créés",
-      gdpContribution: "Contribution au PIB",
-      egdiRanking: "Classement EGDI mondial",
       learnAboutOurAlignment: "En Savoir Plus Sur Notre Alignement",
     },
 
@@ -858,7 +878,7 @@ export const translations: Record<Language, Translations> = {
       getDemo: "احصل على عرض توضيحي",
       contact: "اتصل بنا",
       phone: "الهاتف",
-      email: "admin@ctlrhadd.com",
+      email: "البريد الإلكتروني",
       location: "الموقع",
       readMore: "اقرأ المزيد",
       readLess: "اقرأ أقل",
@@ -897,6 +917,19 @@ export const translations: Record<Language, Translations> = {
       heroSubtitle: "اعمل أقل. حقق أكثر.",
       heroDescription: "تبني CTL حلول مدعومة بالذكاء الاصطناعي توفر الوقت وتزيد المبيعات وتبقيك في المقدمة.",
       heroSlogan: "اعمل أقل. حقق أكثر.", // Arabic translation for heroSlogan
+      heroEyebrow: "ذكاء اصطناعي يحوّل الأعمال",
+      heroTitlePrefix: "الذكاء الاصطناعي في خدمة",
+      heroTitleHighlight: "أدائك.",
+      heroPrimaryCta: "اكتشف حلولنا",
+      heroSecondaryCta: "شاهد حالات الاستخدام",
+      heroCard1Title: "ذكاء اصطناعي مخصص",
+      heroCard1Description: "حلول مصممة خصيصًا لتحديات عملك.",
+      heroCard2Title: "أتمتة ذكية",
+      heroCard2Description: "حسّن عملياتك واكسب المزيد من الكفاءة.",
+      heroCard3Title: "أداء قابل للقياس",
+      heroCard3Description: "نتائج ملموسة، متابَعة ومُقاسة.",
+      heroCard4Title: "أثر ملموس",
+      heroCard4Description: "أنشئ قيمة أكبر وحافظ على تقدمك.",
       aiPoweredTitle: "تفاعل العملاء المدعوم بالذكاء الاصطناعي",
       aiPoweredDescription:
         "حوّل طريقة تفاعلك مع جمهورك. وكلاؤنا المحادثون المتوافقون مع الدارجة يقدمون تجارب أصيلة ومحلية بينما يتكاملون بسلاسة مع أنظمتك الحالية لتعزيز الاحتفاظ والتحويل.",
@@ -914,10 +947,11 @@ export const translations: Record<Language, Translations> = {
       poweredByTitle: "مدعوم بأدوات الذكاء الاصطناعي الرائدة في الصناعة",
       ourCoreProducts: "منتجاتنا الأساسية",
       trustedByTitle: "موثوق به من قبل القادة المغاربة",
+      founderWordTitle: "كلمة المؤسس",
       founderQuote:
         "التحول الرقمي لا يقتصر على التكنولوجيا فحسب — بل يتعلق بإطلاق العنان للإمكانات البشرية. في CTL، نبني حلولًا حقيقية ومفيدة ومتاحة. مساهمتنا في المغرب الرقمي 2030 هي طريقتنا للمساعدة في تشكيل مغرب أكثر حداثة واتصالًا وتركيزًا على الإنسان.",
       founderName: "محمد حمزة بنثامي",
-      founderTitle: "الرئ��س التنفيذي، CTL",
+      founderTitle: "الرئيس التنفيذي، CTL",
       founderContext: "مقتطف من خطابه الذي ألقاه في غرفة التجارة والصناعة والخدمات لجهة الرباط-سلا-القنيطرة",
       readyToStart: "مستعد للبدء؟",
       readyToStartDescription: "اتصل بنا للحصول على استشارة أولية مجانية واكتشف كيف يمكن لفريق CTL تحويل عملك.",
@@ -1234,10 +1268,6 @@ export const translations: Record<Language, Translations> = {
       objective2Description: "تحديث الإدارة لوصول أسرع وأسهل للخدمات للمواطنين والشركات.",
       objective3Title: "اقتصاد رقمي ديناميكي",
       objective3Description: "تحفيز خلق فرص العمل والابتكار في القطاعات التكنولوجية الناشئة.",
-      impactMetricsTitle: "الأهداف الوطنية 2030",
-      jobsCreated: "فرص عمل مباشرة مُنشأة",
-      gdpContribution: "مساهمة في الناتج المحلي الإجمالي",
-      egdiRanking: "ترتيب EGDI عالمياً",
       learnAboutOurAlignment: "اعرف المزيد عن توافقنا",
     },
 
@@ -1313,7 +1343,7 @@ export const translations: Record<Language, Translations> = {
       getDemo: "Get a Demo",
       contact: "Contact",
       phone: "Phone",
-      email: "admin@ctlrhadd.com",
+      email: "Email",
       location: "Location",
       readMore: "Read More",
       readLess: "Read Less",
@@ -1352,6 +1382,19 @@ export const translations: Record<Language, Translations> = {
       heroSubtitle: "Work less. Achieve more.",
       heroDescription: "CTL builds AI-driven solutions that save time, boost sales, and keep you ahead.",
       heroSlogan: "Work Less. Achieve More.", // English translation for heroSlogan
+      heroEyebrow: "INTELLIGENCE THAT TRANSFORMS BUSINESSES",
+      heroTitlePrefix: "Artificial intelligence in service of",
+      heroTitleHighlight: "your performance.",
+      heroPrimaryCta: "Discover our solutions",
+      heroSecondaryCta: "See our use cases",
+      heroCard1Title: "Tailored AI",
+      heroCard1Description: "Solutions adapted to your business challenges.",
+      heroCard2Title: "Smart automation",
+      heroCard2Description: "Optimize your processes and gain efficiency.",
+      heroCard3Title: "Measurable performance",
+      heroCard3Description: "Concrete results, tracked and quantified.",
+      heroCard4Title: "Real impact",
+      heroCard4Description: "Create more value and stay ahead of the curve.",
       aiPoweredTitle: "AI-Powered Customer Engagement",
       aiPoweredDescription:
         "Transform how you interact with your audience. Our Darija-enabled conversational agents deliver authentic, localized experiences while seamlessly integrating with your existing systems to boost retention and conversion.",
@@ -1370,6 +1413,7 @@ export const translations: Record<Language, Translations> = {
       poweredByTitle: "Powered by Industry-Leading AI Tools",
       ourCoreProducts: "Our Core Products",
       trustedByTitle: "Trusted by Moroccan Leaders",
+      founderWordTitle: "A Word From Our Founder",
       founderQuote:
         "Digital transformation is not just about technology — it's about unlocking human potential. At CTL, we build real, useful, and accessible solutions. Contributing to Morocco Digital 2030 is our way of helping shape a more modern, connected, and human-centered Morocco.",
       founderName: "Mohamed Hamza Benthami",
@@ -1701,10 +1745,6 @@ export const translations: Record<Language, Translations> = {
         "Modernize administration for faster and easier access to services for citizens and businesses.",
       objective3Title: "Dynamic Digital Economy",
       objective3Description: "Stimulate job creation and innovation in emerging technology sectors.",
-      impactMetricsTitle: "National Objectives 2030",
-      jobsCreated: "Direct jobs created",
-      gdpContribution: "GDP contribution",
-      egdiRanking: "Global EGDI ranking",
       learnAboutOurAlignment: "Learn More About Our Alignment",
     },
 

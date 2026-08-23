@@ -3,12 +3,13 @@
 import { Button } from "@/components/ui/button"
 import { Check, Phone, BookOpen } from "lucide-react"
 import Link from "next/link"
-import { products } from "@/lib/products"
+import { getLocalizedProducts } from "@/lib/products"
 import { useLanguage } from "@/lib/language-context"
 import { useEffect } from "react"
 
 export default function ProductPageClient() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
+  const products = getLocalizedProducts(language)
 
   useEffect(() => {
     // Handle hash navigation on page load

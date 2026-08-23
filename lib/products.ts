@@ -20,6 +20,8 @@ import {
   Target,
   TrendingUp,
 } from "lucide-react"
+import { productTranslations } from "./products-translations"
+import type { Language } from "./translations"
 
 export interface Product {
   id: string
@@ -517,3 +519,35 @@ export const products: Product[] = [
     icon: Settings,
   },
 ]
+
+export function getLocalizedProducts(language: Language): Product[] {
+  if (language === "en") return products
+
+  return products.map((product) => {
+    const translation = productTranslations[product.id]?.[language as "fr" | "ar"]
+    if (!translation) return product
+
+    return {
+      ...product,
+      name: translation.name,
+      overview: translation.overview,
+      securityCompliance: translation.securityCompliance ?? product.securityCompliance,
+      hostingDeployment: translation.hostingDeployment ?? product.hostingDeployment,
+      performanceDeployment: translation.performanceDeployment ?? product.performanceDeployment,
+      typicalUseCases: translation.typicalUseCases ?? product.typicalUseCases,
+      workflow: translation.workflow ?? product.workflow,
+      capabilities: product.capabilities?.map((cap, i) => ({
+        ...cap,
+        text: translation.capabilities?.[i] ?? cap.text,
+      })),
+      techHighlights: product.techHighlights?.map((item, i) => ({
+        ...item,
+        text: translation.techHighlights?.[i] ?? item.text,
+      })),
+      roadmap: product.roadmap?.map((item, i) => ({
+        ...item,
+        text: translation.roadmap?.[i] ?? item.text,
+      })),
+    }
+  })
+}

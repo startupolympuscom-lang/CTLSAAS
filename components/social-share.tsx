@@ -123,7 +123,7 @@ export function SocialShare({ title, excerpt, image, url, author }: SocialShareP
           {copied ? 'Copied!' : 'Copy Link'}
         </Button>
 
-        {navigator.share && (
+        {typeof navigator !== "undefined" && typeof navigator.share === "function" && (
           <Button
             onClick={handleNativeShare}
             className="flex-1 gap-2 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-black font-semibold"
