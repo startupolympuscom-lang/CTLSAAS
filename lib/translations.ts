@@ -95,6 +95,7 @@ export interface Translations {
     trustedByTitle: string
     founderWordTitle: string
     founderQuote: string
+    founderQuoteHighlight: string
     founderName: string
     founderTitle: string
     founderContext: string
@@ -476,12 +477,11 @@ export const translations: Record<Language, Translations> = {
       trustedByEyebrow: "ILS NOUS FONT CONFIANCE",
       trustedByTitle: "Approuvé par les Leaders Marocains",
       founderWordTitle: "Le Mot du Fondateur",
-      founderQuote:
-        "La transformation numérique ne concerne pas seulement la technologie — elle vise à libérer le potentiel humain. Chez CTL, nous construisons des solutions réelles, utiles et accessibles. Contribuer à Maroc Digital 2030 est notre façon d'aider à façonner un Maroc plus moderne, connecté et centré sur l'humain.",
-      founderName: "Mohamed Hamza Benthami",
-      founderTitle: "PDG, CTL",
-      founderContext:
-        "Extrait de son discours prononcé à la Chambre de Commerce, d'Industrie et de Services de Rabat-Salé-Kénitra",
+      founderQuote: "Les idées ne révèlent leur valeur que lorsqu'on ose les",
+      founderQuoteHighlight: "confronter au réel.",
+      founderName: "Hamza Benthami",
+      founderTitle: "Fondateur & CEO de CTL",
+      founderContext: "Expert en Intelligence Artificielle et Transformation Digitale",
       readyToStart: "Prêt à Commencer ?",
       readyToStartDescription:
         "Contactez-nous pour une consultation initiale gratuite et découvrez comment l'équipe CTL peut transformer votre entreprise.",
@@ -976,11 +976,11 @@ export const translations: Record<Language, Translations> = {
       trustedByEyebrow: "يثقون بنا",
       trustedByTitle: "موثوق به من قبل القادة المغاربة",
       founderWordTitle: "كلمة المؤسس",
-      founderQuote:
-        "التحول الرقمي لا يقتصر على التكنولوجيا فحسب — بل يتعلق بإطلاق العنان للإمكانات البشرية. في CTL، نبني حلولًا حقيقية ومفيدة ومتاحة. مساهمتنا في المغرب الرقمي 2030 هي طريقتنا للمساعدة في تشكيل مغرب أكثر حداثة واتصالًا وتركيزًا على الإنسان.",
-      founderName: "محمد حمزة بنثامي",
-      founderTitle: "الرئيس التنفيذي، CTL",
-      founderContext: "مقتطف من خطابه الذي ألقاه في غرفة التجارة والصناعة والخدمات لجهة الرباط-سلا-القنيطرة",
+      founderQuote: "الأفكار لا تكشف عن قيمتها الحقيقية إلا عندما",
+      founderQuoteHighlight: "نجرؤ على مواجهتها بالواقع.",
+      founderName: "حمزة بنثامي",
+      founderTitle: "المؤسس والرئيس التنفيذي لشركة CTL",
+      founderContext: "خبير في الذكاء الاصطناعي والتحول الرقمي",
       readyToStart: "مستعد للبدء؟",
       readyToStartDescription: "اتصل بنا للحصول على استشارة أولية مجانية واكتشف كيف يمكن لفريق CTL تحويل عملك.",
       getFreeConsultation: "احصل على استشارتك المجانية",
@@ -1451,12 +1451,11 @@ export const translations: Record<Language, Translations> = {
       trustedByEyebrow: "TRUSTED BY",
       trustedByTitle: "Trusted by Moroccan Leaders",
       founderWordTitle: "A Word From Our Founder",
-      founderQuote:
-        "Digital transformation is not just about technology — it's about unlocking human potential. At CTL, we build real, useful, and accessible solutions. Contributing to Morocco Digital 2030 is our way of helping shape a more modern, connected, and human-centered Morocco.",
-      founderName: "Mohamed Hamza Benthami",
-      founderTitle: "CEO, CTL",
-      founderContext:
-        "Excerpt from his speech delivered at the Chamber of Commerce, Industry and Services of Rabat-Salé-Kénitra",
+      founderQuote: "Ideas only reveal their true value when you dare to",
+      founderQuoteHighlight: "put them to the test of reality.",
+      founderName: "Hamza Benthami",
+      founderTitle: "Founder & CEO of CTL",
+      founderContext: "AI & Digital Transformation Expert",
       readyToStart: "Ready to Get Started?",
       readyToStartDescription:
         "Contact us for a free initial consultation and discover how the CTL team can transform your business.",
