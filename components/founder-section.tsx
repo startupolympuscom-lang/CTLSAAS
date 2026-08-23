@@ -11,9 +11,10 @@ export function FounderSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-20">
-          <h2 className="text-3xl md:text-4xl font-sans font-semibold text-moroccan-charcoal mb-4">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-moroccan-charcoal mb-4">
             {t.home.founderWordTitle}
           </h2>
+          <div className="h-0.5 w-10 bg-moroccan-yellow mx-auto" aria-hidden="true" />
         </div>
 
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-16 lg:gap-20">
@@ -38,7 +39,7 @@ export function FounderSection() {
             </blockquote>
             <div className="space-y-3">
               <p className="text-2xl font-bold text-moroccan-charcoal">- {t.home.founderName}</p>
-              <p className="text-lg text-moroccan-teal font-semibold">{t.home.founderTitle}</p>
+              <p className="text-lg text-moroccan-yellow font-semibold">{t.home.founderTitle}</p>
               <p className="text-sm text-gray-600 italic mt-4">{t.home.founderContext}</p>
             </div>
           </div>

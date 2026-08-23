@@ -77,12 +77,21 @@ export interface Translations {
     workflowDescription: string
     madeInMoroccoTitle: string
     madeInMoroccoDescription: string
+    blogEyebrow: string
+    blogTitleLine1: string
+    blogTitleHighlight: string
+    blogSubtitle: string
+    blogViewAll: string
+    blogLatestBadge: string
+    blogViewAllArticles: string
+    exploreProductsEyebrow: string
     exploreProducts: string
     exploreProductsDescription: string
     aiExcellenceTitle: string
     aiExcellenceDescription: string
     poweredByTitle: string
     ourCoreProducts: string
+    trustedByEyebrow: string
     trustedByTitle: string
     founderWordTitle: string
     founderQuote: string
@@ -447,6 +456,15 @@ export const translations: Record<Language, Translations> = {
       madeInMoroccoTitle: "Fabriqué au Maroc",
       madeInMoroccoDescription:
         "Fièrement construit au Maroc, les solutions CTL combinent une compréhension approfondie des marchés locaux avec des pratiques d'IA mondiales de pointe—garantissant que votre entreprise obtient un avantage concurrentiel tout en restant conforme et prête pour l'avenir.",
+      blogEyebrow: "DERNIÈRES ACTUALITÉS",
+      blogTitleLine1: "Restez informé avec",
+      blogTitleHighlight: "nos derniers articles",
+      blogSubtitle:
+        "Découvrez nos analyses sur la transformation digitale, les tendances technologiques et les innovations sectorielles.",
+      blogViewAll: "Voir tout",
+      blogLatestBadge: "Dernier",
+      blogViewAllArticles: "Voir tous les articles",
+      exploreProductsEyebrow: "NOS SOLUTIONS",
       exploreProducts: "Découvrez Nos Produits",
       exploreProductsDescription:
         "Découvrez notre suite complète de solutions alimentées par l'IA conçues pour transformer vos opérations commerciales et stimuler une croissance sans précédent.",
@@ -455,6 +473,7 @@ export const translations: Record<Language, Translations> = {
         "Alimenté par des plateformes d'IA et des technologies de pointe de l'industrie qui stimulent l'innovation",
       poweredByTitle: "Alimenté par des Outils IA de Premier Plan",
       ourCoreProducts: "Nos Produits Principaux",
+      trustedByEyebrow: "ILS NOUS FONT CONFIANCE",
       trustedByTitle: "Approuvé par les Leaders Marocains",
       founderWordTitle: "Le Mot du Fondateur",
       founderQuote:
@@ -939,6 +958,14 @@ export const translations: Record<Language, Translations> = {
       madeInMoroccoTitle: "صنع في المغرب",
       madeInMoroccoDescription:
         "مبنية بفخر في المغرب، حلول CTL تجمع بين فهم عميق للأسواق المحلية وممارسات الذكاء الاصطناعي العالمية المتطورة—مما يضمن حصول عملك على ميزة تنافسية مع البقاء متوافقًا وجاهزًا للمستقبل.",
+      blogEyebrow: "آخر الأخبار",
+      blogTitleLine1: "ابق على اطلاع مع",
+      blogTitleHighlight: "أحدث مقالاتنا",
+      blogSubtitle: "اكتشف رؤانا حول التحول الرقمي واتجاهات التكنولوجيا وابتكارات القطاع.",
+      blogViewAll: "عرض الكل",
+      blogLatestBadge: "الأحدث",
+      blogViewAllArticles: "عرض جميع المقالات",
+      exploreProductsEyebrow: "حلولنا",
       exploreProducts: "استكشف منتجاتنا",
       exploreProductsDescription: "تقدم CTL مجموعة من حلول الذكاء الاصطناعي والتطوير المتطورة المصممة لتمكين عملك.",
       aiExcellenceTitle: "التميز في الذكاء الاصطناعي في الصميم",
@@ -946,6 +973,7 @@ export const translations: Record<Language, Translations> = {
         "نعمل في تقاطع الابتكار والتنفيذ — نستفيد من منصات الذكاء الاصطناعي والأتمتة الرائدة عالميًا لتقديم حلول ذكية وعالية التأثير مصممة خصيصًا لعملك.",
       poweredByTitle: "مدعوم بأدوات الذكاء الاصطناعي الرائدة في الصناعة",
       ourCoreProducts: "منتجاتنا الأساسية",
+      trustedByEyebrow: "يثقون بنا",
       trustedByTitle: "موثوق به من قبل القادة المغاربة",
       founderWordTitle: "كلمة المؤسس",
       founderQuote:
@@ -1404,6 +1432,14 @@ export const translations: Record<Language, Translations> = {
       madeInMoroccoTitle: "Made in Morocco",
       madeInMoroccoDescription:
         "Proudly built in Morocco, CTL solutions combine a deep understanding of local markets with cutting-edge global AI practices—ensuring your business gains a competitive advantage while staying compliant and future-ready.",
+      blogEyebrow: "LATEST INSIGHTS",
+      blogTitleLine1: "Stay Updated With",
+      blogTitleHighlight: "Our Latest Stories",
+      blogSubtitle: "Discover insights on digital transformation, technology trends, and industry innovations.",
+      blogViewAll: "View All",
+      blogLatestBadge: "Latest",
+      blogViewAllArticles: "View All Articles",
+      exploreProductsEyebrow: "OUR SOLUTIONS",
       exploreProducts: "Explore Our Products",
       exploreProductsDescription:
         "CTL offers a suite of cutting-edge AI and development solutions tailored to empower your business.",
@@ -1412,6 +1448,7 @@ export const translations: Record<Language, Translations> = {
         "We operate at the intersection of innovation and execution — leveraging the world's leading AI and automation platforms to deliver intelligent, high-impact solutions tailored to your business.",
       poweredByTitle: "Powered by Industry-Leading AI Tools",
       ourCoreProducts: "Our Core Products",
+      trustedByEyebrow: "TRUSTED BY",
       trustedByTitle: "Trusted by Moroccan Leaders",
       founderWordTitle: "A Word From Our Founder",
       founderQuote:

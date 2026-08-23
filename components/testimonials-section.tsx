@@ -25,18 +25,24 @@ export function TestimonialsSection() {
   ]
 
   return (
-    <section className="py-28 bg-moroccan-charcoal text-white">
+    <section className="py-28 bg-moroccan-sand/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">{t.home.trustedByTitle}</h2>
-          <div className="w-24 h-1 bg-moroccan-yellow mx-auto"></div>
+          <span className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-moroccan-charcoal/70">
+            <span className="h-2 w-2 rounded-full bg-moroccan-yellow" aria-hidden="true" />
+            {t.home.trustedByEyebrow}
+          </span>
+          <h2 className="mt-4 text-4xl md:text-5xl font-display font-bold text-moroccan-charcoal">
+            {t.home.trustedByTitle}
+          </h2>
+          <div className="mt-4 h-0.5 w-10 bg-moroccan-yellow mx-auto" aria-hidden="true" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {logos.map((client, index) => (
             <div
               key={client.name}
-              className="group bg-white rounded-3xl p-12 shadow-medium hover:shadow-strong transition-all duration-300 transform hover:-translate-y-1"
+              className="group bg-white rounded-2xl p-12 shadow-medium hover:shadow-strong border border-gray-100 transition-all duration-300 transform hover:-translate-y-1"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               <div className="flex items-center justify-center h-32">

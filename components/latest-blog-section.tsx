@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, CalendarDays, User } from 'lucide-react'
+import { useLanguage } from '@/lib/language-context'
 
 interface BlogPost {
   id: string
@@ -22,6 +23,7 @@ interface BlogPost {
 }
 
 export function LatestBlogSection() {
+  const { t } = useLanguage()
   const [posts, setPosts] = useState<BlogPost[]>([])
   const [isLoading, setIsLoading] = useState(true)
 
@@ -67,32 +69,30 @@ export function LatestBlogSection() {
   const gridPosts = posts
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-background to-background/50">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-16">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="h-1 w-12 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full" />
-            <span className="text-sm font-semibold uppercase tracking-widest text-yellow-500">Latest Insights</span>
-          </div>
-          <div className="flex items-end justify-between gap-8">
+          <span className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-moroccan-charcoal/70">
+            <span className="h-2 w-2 rounded-full bg-moroccan-yellow" aria-hidden="true" />
+            {t.home.blogEyebrow}
+          </span>
+          <div className="mt-3 h-0.5 w-10 bg-moroccan-yellow" aria-hidden="true" />
+          <div className="mt-6 flex items-end justify-between gap-8">
             <div className="flex-1">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 leading-tight">
-                <span className="block mb-2">Stay Updated With</span>
-                <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-amber-500 bg-clip-text text-transparent">
-                  Our Latest Stories
-                </span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-moroccan-charcoal mb-4 leading-tight">
+                <span className="block mb-2">{t.home.blogTitleLine1}</span>
+                <span className="text-moroccan-yellow">{t.home.blogTitleHighlight}</span>
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl">
-                Discover insights on digital transformation, technology trends, and industry innovations
-              </p>
+              <p className="text-lg text-gray-600 max-w-2xl">{t.home.blogSubtitle}</p>
             </div>
-            <Button asChild variant="outline" className="hidden lg:flex gap-2 rounded-full bg-yellow-400/10 border-yellow-400/30 hover:border-yellow-400/50 hover:bg-yellow-400/20 text-foreground">
-              <Link href="/blog">
-                View All
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
+            <Link
+              href="/blog"
+              className="group hidden lg:inline-flex items-center gap-2 font-semibold text-moroccan-charcoal border-b-2 border-moroccan-charcoal/20 hover:border-moroccan-charcoal pb-1 transition-colors duration-300"
+            >
+              {t.home.blogViewAll}
+              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
           </div>
         </div>
 
@@ -111,7 +111,7 @@ export function LatestBlogSection() {
                   
                   <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
                     <div className="mb-4 inline-block px-4 py-1.5 bg-yellow-400 text-black font-semibold rounded-full text-sm">
-                      Latest
+                      {t.home.blogLatestBadge}
                     </div>
                     <h2 className="text-3xl md:text-4xl font-bold mb-3 leading-tight text-balance">
                       {featuredPost.title}
@@ -201,9 +201,9 @@ export function LatestBlogSection() {
         </div>
 
         {/* Mobile CTA */}
-        <Button asChild className="w-full md:hidden gap-2 rounded-full bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-black font-semibold shadow-lg">
+        <Button asChild className="w-full md:hidden gap-2 rounded-full bg-moroccan-yellow hover:bg-moroccan-yellow/90 text-moroccan-charcoal font-semibold shadow-lg">
           <Link href="/blog">
-            View All Articles
+            {t.home.blogViewAllArticles}
             <ArrowRight className="h-4 w-4" />
           </Link>
         </Button>
