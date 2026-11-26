@@ -17,97 +17,41 @@ import {
   TrendingUp,
   BookOpen,
   Phone,
-  ArrowRight,
 } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
+import { TransformationFlowchart, type FlowchartPhase } from "@/components/transformation-flowchart"
 
 export default function CorpDigitalTransformationClient() {
   const { t } = useLanguage()
 
-  const flowchartData = [
-    {
-      id: 1,
-      title: t.digitalTransformation.phases.phase1.title,
-      items: t.digitalTransformation.phases.phase1.items.map((item, index) => ({
-        text: item,
-        icon: [ClipboardList, BarChart2, FileText, CheckCircle, Lightbulb][index] || FileText,
-      })),
-    },
-    {
-      id: 2,
-      title: t.digitalTransformation.phases.phase2.title,
-      items: t.digitalTransformation.phases.phase2.items.map((item) => ({
-        heading: item.heading,
-        content: item.content,
-        icon:
-          item.heading.includes("Stakeholder") || item.heading.includes("أصحاب المصلحة")
-            ? User
-            : item.heading.includes("Data") || item.heading.includes("البيانات")
-              ? ClipboardList
-              : MessageSquare,
-      })),
-    },
-    {
-      id: 3,
-      title: t.digitalTransformation.phases.phase3.title,
-      items: t.digitalTransformation.phases.phase3.items.map((item) => ({
-        heading: item.heading,
-        content: item.content,
-        icon:
-          item.heading.includes("Design") || item.heading.includes("التفكير التصميمي")
-            ? Lightbulb
-            : item.heading.includes("Expert") || item.heading.includes("الخبراء")
-              ? CheckCircle
-              : FileText,
-      })),
-    },
-    {
-      id: 4,
-      title: t.digitalTransformation.phases.phase4.title,
-      items: t.digitalTransformation.phases.phase4.items.map((item) => ({
-        heading: item.heading,
-        content: item.content,
-        icon:
-          item.heading.includes("Solution") || item.heading.includes("الحل")
-            ? Settings
-            : item.heading.includes("Identification") || item.heading.includes("تحديد")
-              ? Shield
-              : BarChart2,
-      })),
-    },
-    {
-      id: 5,
-      title: t.digitalTransformation.phases.phase5.title,
-      items: t.digitalTransformation.phases.phase5.items.map((item) => ({
-        heading: item.heading,
-        content: item.content,
-        icon: CheckCircle,
-      })),
-    },
-    {
-      id: 6,
-      title: t.digitalTransformation.phases.phase6.title,
-      items: t.digitalTransformation.phases.phase6.items.map((item) => ({
-        heading: item.heading,
-        content: item.content,
-        icon: item.heading.includes("MVP") ? Zap : RefreshCw,
-      })),
-    },
-    {
-      id: 7,
-      title: t.digitalTransformation.phases.phase7.title,
-      items: t.digitalTransformation.phases.phase7.items.map((item) => ({
-        heading: item.heading,
-        content: item.content,
-        icon:
-          item.heading.includes("Performance") || item.heading.includes("الأداء")
-            ? BarChart2
-            : item.heading.includes("Scaling") || item.heading.includes("التوسع")
-              ? TrendingUp
-              : BookOpen,
-      })),
-    },
+  const { phases } = t.digitalTransformation
+  const phaseIcons = [
+    [ClipboardList, BarChart2, FileText, User, CheckCircle],
+    [User, ClipboardList, MessageSquare],
+    [Lightbulb, CheckCircle, FileText],
+    [Settings, Shield, BarChart2],
+    [CheckCircle],
+    [Zap, RefreshCw],
+    [BarChart2, TrendingUp, BookOpen],
   ]
+  const flowchartData: FlowchartPhase[] = [
+    phases.phase1,
+    phases.phase2,
+    phases.phase3,
+    phases.phase4,
+    phases.phase5,
+    phases.phase6,
+    phases.phase7,
+  ].map((phase, phaseIndex) => ({
+    id: phaseIndex + 1,
+    title: phase.title,
+    highlight: phaseIndex === 4, // client co-creation checkpoint
+    items: (phase.items as Array<string | { heading: string; content: string }>).map((item, itemIndex) => ({
+      heading: typeof item === "string" ? undefined : item.heading,
+      text: typeof item === "string" ? item : item.content,
+      icon: phaseIcons[phaseIndex][itemIndex] ?? CheckCircle,
+    })),
+  }))
 
   return (
     <div className="min-h-screen">
@@ -126,7 +70,7 @@ export default function CorpDigitalTransformationClient() {
                 asChild
                 variant="primary-solid"
                 size="lg"
-                className="px-12 py-6 text-lg rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 focus-visible-enhanced"
+                className="h-auto max-w-full whitespace-normal px-8 sm:px-12 py-4 sm:py-6 text-base sm:text-lg rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 focus-visible-enhanced"
                 aria-label={t.digitalTransformation.startTransformation}
               >
                 <Link href="/contact" className="flex items-center space-x-2">
@@ -138,7 +82,7 @@ export default function CorpDigitalTransformationClient() {
                 asChild
                 variant="secondary-outline"
                 size="lg"
-                className="px-12 py-6 text-lg rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 focus-visible-enhanced"
+                className="h-auto max-w-full whitespace-normal px-8 sm:px-12 py-4 sm:py-6 text-base sm:text-lg rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 focus-visible-enhanced"
                 aria-label={t.digitalTransformation.learnAboutCTL}
               >
                 <Link href="/about" className="flex items-center space-x-2">
@@ -153,91 +97,16 @@ export default function CorpDigitalTransformationClient() {
 
       {/* Flowchart Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-display font-bold text-moroccan-charcoal mb-8">
               {t.digitalTransformation.flowchartTitle}
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-12">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               {t.digitalTransformation.flowchartDescription}
             </p>
           </div>
-          {/* Flowchart Container with Frame */}
-          <div className="bg-white rounded-2xl p-8 shadow-medium border border-gray-100">
-            <div
-              className="relative overflow-x-auto pb-8"
-              role="img"
-              aria-label="Digital transformation process flowchart"
-            >
-              <div className="flex space-x-12 lg:space-x-20 justify-center min-w-max">
-                {flowchartData.map((phase, index) => (
-                  <div key={phase.id} className="relative flex flex-col items-center group">
-                    {/* Phase Number Circle */}
-                    <div className="w-20 h-20 bg-moroccan-charcoal text-white rounded-full flex items-center justify-center font-bold text-3xl shadow-strong z-10">
-                      {phase.id}
-                    </div>
-
-                    {/* Horizontal Connector (between phases) */}
-                    {index < flowchartData.length - 1 && (
-                      <div
-                        className="absolute top-1/2 left-[calc(100%+1rem)] w-12 lg:w-20 h-1.5 bg-moroccan-charcoal -translate-y-1/2 z-0 group-last:hidden"
-                        aria-hidden="true"
-                      ></div>
-                    )}
-
-                    {/* Phase Title Box */}
-                    <div className="bg-moroccan-charcoal text-white rounded-lg p-5 mt-8 text-center font-semibold text-xl shadow-medium w-72 flex items-center justify-center h-24">
-                      {phase.title}
-                    </div>
-
-                    {/* Vertical Line from Title Box */}
-                    <div className="w-1.5 h-12 bg-moroccan-charcoal mt-4" aria-hidden="true"></div>
-
-                    {/* Items */}
-                    <div className="flex flex-col items-center space-y-6 mt-4">
-                      {phase.items.map((item, itemIndex) => (
-                        <div key={itemIndex} className="relative">
-                          {/* Vertical Line between items (if not first) */}
-                          {itemIndex > 0 && (
-                            <div
-                              className="absolute top-[-1.5rem] left-1/2 w-1.5 h-6 bg-moroccan-charcoal -translate-x-1/2"
-                              aria-hidden="true"
-                            ></div>
-                          )}
-                          <div className="bg-white text-moroccan-charcoal rounded-lg p-6 shadow-medium hover:shadow-strong hover:-translate-y-0.5 transition-all duration-300 text-base text-center w-72 min-h-[100px] flex flex-col justify-center items-center border border-gray-200">
-                            {item.heading && (
-                              <h4 className="font-semibold mb-2 text-lg flex items-center justify-center gap-3">
-                                {item.icon && (
-                                  <item.icon className="h-6 w-6 text-moroccan-teal flex-shrink-0" aria-hidden="true" />
-                                )}
-                                {item.heading}
-                              </h4>
-                            )}
-                            {!item.heading && item.icon && (
-                              <div className="flex items-center justify-center mb-3">
-                                <item.icon className="h-8 w-8 text-moroccan-teal" aria-hidden="true" />
-                              </div>
-                            )}
-                            <p className="leading-relaxed whitespace-pre-line text-sm">{item.text || item.content}</p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-              {/* Scroll hint overlay */}
-              <div
-                className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent pointer-events-none z-20"
-                aria-hidden="true"
-              ></div>
-            </div>
-            {/* Explicit scroll instruction for all screens with arrow */}
-            <p className="text-center text-moroccan-charcoal text-lg font-bold mt-8 flex items-center justify-center gap-2">
-              {t.digitalTransformation.scrollInstruction}{" "}
-              <ArrowRight className="h-6 w-6 text-moroccan-teal flex-shrink-0" aria-hidden="true" />
-            </p>
-          </div>
+          <TransformationFlowchart phases={flowchartData} />
         </div>
       </section>
 
@@ -400,7 +269,7 @@ export default function CorpDigitalTransformationClient() {
               asChild
               variant="primary-solid"
               size="lg"
-              className="px-12 py-6 text-lg rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+              className="h-auto max-w-full whitespace-normal px-8 sm:px-12 py-4 sm:py-6 text-base sm:text-lg rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
             >
               <Link href="/contact" className="flex items-center space-x-2">
                 <Phone className="h-5 w-5" />

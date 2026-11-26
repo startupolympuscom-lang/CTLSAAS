@@ -656,7 +656,7 @@ export const translations: Record<Language, Translations> = {
         "Une approche claire, étape par étape pour guider votre entreprise à travers une évolution numérique réussie avec CTL.",
       startTransformation: "Commencez Votre Transformation",
       learnAboutCTL: "En Savoir Plus Sur CTL",
-      flowchartTitle: "Organigramme de Transformation Numérique Corporative CTL",
+      flowchartTitle: "Le parcours de transformation numérique CTL",
       flowchartDescription:
         "Notre méthodologie éprouvée assure un parcours fluide et efficace du concept initial à la croissance soutenue.",
       scrollInstruction: "Faites défiler vers la droite pour voir l'organigramme complet",
@@ -751,7 +751,7 @@ export const translations: Record<Language, Translations> = {
           ],
         },
         phase7: {
-          title: "CROISSANCE & SURVEILLANCE",
+          title: "Croissance & Surveillance",
           items: [
             {
               heading: "Suivi de Performance",
@@ -1624,7 +1624,7 @@ export const translations: Record<Language, Translations> = {
       subtitle: "A clear, step-by-step approach to guide your business through successful digital evolution with CTL.",
       startTransformation: "Start Your Transformation",
       learnAboutCTL: "Learn About CTL",
-      flowchartTitle: "CTL Corporate Digital Transformation Flowchart",
+      flowchartTitle: "The CTL Digital Transformation Journey",
       flowchartDescription:
         "Our proven methodology ensures a smooth and effective journey from initial concept to sustained growth.",
       scrollInstruction: "Scroll right to view the full flowchart",
@@ -1715,7 +1715,7 @@ export const translations: Record<Language, Translations> = {
           ],
         },
         phase7: {
-          title: "GROWTH & MONITORING",
+          title: "Growth & Monitoring",
           items: [
             {
               heading: "Performance Tracking",
